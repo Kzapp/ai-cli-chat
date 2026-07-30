@@ -14,10 +14,10 @@ This program is an AI chat environment using Claude Sonnet 4.6 as the assistant.
 ## Requirements
 
 - Python 3.14.6 (or compatible)
-- The `anthropic` package — the only external install required:
+- Install dependencies from `requirements.txt`:
 
 ```bash
-pip install anthropic
+pip install -r requirements.txt
 ```
 
 - Your own Anthropic API key, set as an environment variable named `ANTHROPIC_API_KEY`
