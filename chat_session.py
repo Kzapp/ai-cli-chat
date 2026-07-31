@@ -4,7 +4,7 @@ from anthropic import Anthropic, APIConnectionError, APIStatusError
 from dotenv import load_dotenv
 class ChatSession:
 # Declare client (claude) - Read/find prior conversation log - Create empty list (conversation) - 
-    def __init__(self):
+    def __init__(self) -> None:
         load_dotenv()
         self.client = Anthropic()
         try:
@@ -15,11 +15,11 @@ class ChatSession:
             print("No Previous conversation found -- Starting Fresh")
 
 #Gather user input - Store inside (self)ask - return self.ask 
-    def get_input(self):
+    def get_input(self) -> str:
         self.ask = input("What's on your mind? ")
         return self.ask
 # Append / Call API / record conversation (print)
-    def send_message(self, ask):    
+    def send_message(self, ask:str) -> None:    
         try:
             self.conversation.append({"role": "user", "content": ask})
             response = self.client.messages.create(
